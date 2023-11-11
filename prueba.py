@@ -1,4 +1,5 @@
-
+pip install dash
+import dash
 # Inicia la aplicación Dash con el nombre 'prueba'
 app = dash.Dash(__name__)
 
