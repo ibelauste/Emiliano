@@ -1,9 +1,9 @@
 
 # Inicia la aplicación Dash con el nombre 'prueba'
-prueba = dash.Dash(__name__)
+app = dash.Dash(__name__)
 
 # Diseño del layout
-prueba.layout = html.Div([
+app.layout = html.Div([
     dcc.Upload(
         id='upload-data',
         children=[
@@ -32,7 +32,7 @@ def parse_contents(contents, filename):
     return df_grouped
 
 # Callback para cargar el archivo y actualizar el gráfico
-@prueba.callback(Output('line-chart', 'figure'),
+@app.callback(Output('line-chart', 'figure'),
               [Input('upload-data', 'contents'),
                Input('upload-data', 'filename')])
 def update_graph(contents, filename):
@@ -56,5 +56,5 @@ def update_graph(contents, filename):
     return fig
 
 if __name__ == '__main__':
-    prueba.run_server(debug=True)
+    app.run_server(debug=True)
 
