@@ -13,7 +13,6 @@ import pandas as pd
 
 # Inicia la aplicación Dash con el nombre 'prueba'
 prueba = dash.Dash(__name__)
-server=app.server
 
 # Diseño del layout
 prueba.layout = html.Div([
