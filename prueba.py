@@ -10,8 +10,6 @@ import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
 import pandas as pd
-import base64
-import io
 
 # Inicia la aplicación Dash con el nombre 'prueba'
 prueba = dash.Dash(__name__)
