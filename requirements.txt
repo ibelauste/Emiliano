@@ -1,6 +1,4 @@
 dash
 pandas
 gunicorn==19.7.1
-base64
-io
 app
