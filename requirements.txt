@@ -2,4 +2,4 @@ dash-bootstrap-components
 pandas
 gunicorn==19.7.1
 app
-import dash
+dash
