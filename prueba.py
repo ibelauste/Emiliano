@@ -2,6 +2,8 @@
 # Inicia la aplicación Dash con el nombre 'prueba'
 app = dash.Dash(__name__)
 
+server=app.server
+
 # Diseño del layout
 app.layout = html.Div([
     dcc.Upload(
