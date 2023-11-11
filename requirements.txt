@@ -1,4 +1,4 @@
-dash==2.6.0
+dash
 pandas
 gunicorn==19.7.1
 base64
