@@ -5,6 +5,7 @@ import pandas as pd
 import base64
 import io
 import os
+import app
 
 # Inicia la aplicación Dash con el nombre 'prueba'
 prueba = dash.Dash(__name__)
