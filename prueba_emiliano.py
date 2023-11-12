@@ -6,7 +6,6 @@ import base64
 import io
 import os
 import app
-import dash-bootstrap-components
 
 # Inicia la aplicación Dash con el nombre 'prueba'
 prueba = dash.Dash(__name__)
