@@ -1,5 +1,4 @@
 dash-bootstrap-components
 pandas
-app
 dash==2.3.1
 gunicorn
