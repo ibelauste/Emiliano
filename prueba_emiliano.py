@@ -8,6 +8,8 @@ import os
 # Inicia la aplicación Dash con el nombre 'prueba'
 prueba2 = dash.Dash(__name__)
 
+server=prueba2.server
+
 # Variable global para almacenar los datos
 global_data = None
 
