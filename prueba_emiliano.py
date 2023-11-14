@@ -7,7 +7,7 @@ import io
 import os
 
 # Inicia la aplicación Dash con el nombre 'prueba'
-app = dash.Dash(__name__)
+app1 = dash.Dash(__name__)
 
 # Variable global para almacenar los datos del CSV
 global_data = None
@@ -20,7 +20,7 @@ if not os.path.exists(csv_filename):
     pd.DataFrame(columns=['Year', 'Global_Sales']).to_csv(csv_filename, index=False)
 
 # Diseño del layout
-app.layout = html.Div([
+app1.layout = html.Div([
     dcc.Upload(
         id='upload-data',
         children=[
@@ -59,7 +59,7 @@ def parse_contents(contents, filename):
     return df_grouped
 
 # Callback para cargar el archivo y actualizar el gráfico
-@app.callback(Output('line-chart', 'figure'),
+@app1.callback(Output('line-chart', 'figure'),
               [Input('upload-data', 'contents'),
                Input('upload-data', 'filename')])
 def update_graph(contents, filename):
@@ -85,7 +85,7 @@ def update_graph(contents, filename):
     return fig
 
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8051)
+    app1.run_server(debug=True, port=8051)
 
 
 import dash
@@ -300,7 +300,7 @@ import io
 import os
 
 # Inicia la aplicación Dash
-app = dash.Dash(__name__, suppress_callback_exceptions=True)
+app2 = dash.Dash(__name__, suppress_callback_exceptions=True)
 
 # Nombre del archivo CSV para almacenar los datos
 csv_filename = 'data.csv'
@@ -316,7 +316,7 @@ global_data = pd.read_csv(csv_filename)  # Cargar los datos iniciales desde el a
 colors = ['#FFFC8D', '#FFC489', '#FFA99F', '#E2E2E2', '#DCDCDC']
 
 # Diseño del layout principal con pestañas
-app.layout = html.Div([
+app2.layout = html.Div([
     dcc.Tabs(id='tabs', value='tab1', children=[
         dcc.Tab(label='Gráfico de Línea', value='tab1'),
         dcc.Tab(label='Gráfico de Barras', value='tab2'),
@@ -338,7 +338,7 @@ layout_tab3 = html.Div([
 ])
 
 # Callback para actualizar el gráfico de semi círculo (gauge)
-@app.callback(Output('sales-graph', 'figure'),
+@app2.callback(Output('sales-graph', 'figure'),
               [Input('platform-dropdown', 'value')])
 def update_gauge_chart(selected_platform):
     # Utiliza la función load_data() para obtener los datos filtrados
@@ -383,7 +383,7 @@ def load_data(selected_platform):
     return df_filtered
 
 # Callback para cambiar entre pestañas
-@app.callback(Output('tabs-content', 'children'),
+@app2.callback(Output('tabs-content', 'children'),
               [Input('tabs', 'value')])
 def update_tab(selected_tab):
     if selected_tab == 'tab1':
@@ -394,8 +394,10 @@ def update_tab(selected_tab):
         return layout_tab3
 
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8051)
+    app2.run_server(debug=True, port=8051)
 
+
+_______________________________________________________________________________
 
 import dash
 from dash import dcc, html, Input, Output
@@ -407,8 +409,6 @@ import os
 
 # Inicia la aplicación Dash
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
-
-app=app.server
 
 # Nombre del archivo CSV para almacenar los datos
 csv_filename = 'data.csv'
