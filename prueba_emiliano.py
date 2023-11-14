@@ -410,6 +410,8 @@ import os
 # Inicia la aplicación Dash
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
+app=app.server
+
 # Nombre del archivo CSV para almacenar los datos
 csv_filename = 'data.csv'
 
