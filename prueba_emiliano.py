@@ -5,6 +5,7 @@ import pandas as pd
 import base64
 import io
 import os
+import app
 
 # Inicia la aplicación Dash con el nombre 'prueba'
 app1 = dash.Dash(__name__)
@@ -61,7 +62,7 @@ def parse_contents(contents, filename):
     return df_grouped
 
 # Callback para cargar el archivo y actualizar el gráfico
-@app1.callback(Output('line-chart', 'figure'),
+@app.callback(Output('line-chart', 'figure'),
               [Input('upload-data', 'contents'),
                Input('upload-data', 'filename')])
 def update_graph(contents, filename):
