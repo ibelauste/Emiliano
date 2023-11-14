@@ -9,6 +9,8 @@ import os
 # Inicia la aplicación Dash con el nombre 'prueba'
 app1 = dash.Dash(__name__)
 
+app=app.server
+
 # Variable global para almacenar los datos del CSV
 global_data = None
 
@@ -409,8 +411,6 @@ import os
 
 # Inicia la aplicación Dash
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
-
-app=app.server
 
 # Nombre del archivo CSV para almacenar los datos
 csv_filename = 'data.csv'
