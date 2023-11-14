@@ -10,7 +10,7 @@ import os
 # Inicia la aplicación Dash con el nombre 'prueba'
 app = dash.Dash(__name__)
 
-app=app.server
+server=app.server
 
 # Nombre del archivo CSV para almacenar los datos
 csv_filename = 'data.csv'
