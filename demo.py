@@ -10,6 +10,8 @@ import plotly.express as px
 # Create the Dash application
 app = dash.Dash(__name__)
 
+server=app.server
+
 # List of "Product line" options
 product_line_options = [
     'Health and beauty',
